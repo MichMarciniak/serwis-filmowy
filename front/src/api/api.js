@@ -1,6 +1,6 @@
 
 export const getCategories = async () => {
-    return await fetch("http://localhost:8080/category", {
+    return await fetch("/api/category", {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -10,7 +10,7 @@ export const getCategories = async () => {
 }
 
 export const addNewFilm = async (title, duration, releaseYear, categories) => {
-    return await fetch("http://localhost:8080/film", {
+    return await fetch("/api/film", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -26,7 +26,7 @@ export const addNewFilm = async (title, duration, releaseYear, categories) => {
 }
 
 export const addNewSeries = async (title, releaseYear, endYear, categories) => {
-    return await fetch("http://localhost:8080/series", {
+    return await fetch("/api/series", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -42,30 +42,30 @@ export const addNewSeries = async (title, releaseYear, endYear, categories) => {
 }
 
 export const getFilm = async (id) => {
-    return await fetch(`http://localhost:8080/film/${id}`, {
+    return await fetch(`/api/film/${id}`, {
         method: "GET",
         credentials: "include"
     })
 }
 
 export const getSeries = async (id) => {
-    return await fetch(`http://localhost:8080/series/${id}`, {
+    return await fetch(`/api/series/${id}`, {
         method: "GET",
         credentials: "include"
     })
 }
 
 export const search = async (url) => {
-    return await fetch(`http://localhost:8080/search?${url}`, {
+    return await fetch(`/api/search?${url}`, {
     });
 }
 
 export const getEpisodes = async (id) => {
-    return await fetch(`http://localhost:8080/series/${id}/episodes`)
+    return await fetch(`/api/series/${id}/episodes`)
 }
 
 export const addReview = async (id, type, rating, comment) => {
-    return await fetch(`http://localhost:8080/${type}/${id}/review`, {
+    return await fetch(`/api/${type}/${id}/review`, {
         headers: {
             'Content-Type': 'application/json'
         },

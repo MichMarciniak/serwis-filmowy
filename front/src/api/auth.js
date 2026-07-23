@@ -1,13 +1,13 @@
 
 export const logout = async () => {
-    await fetch("http://localhost:8080/logout", {
+    await fetch("/api/logout", {
         method: "POST",
         credentials: "include"
     });
 };
 
 export const login = async (username, password) => {
-    return await fetch("http://localhost:8080/login", {
+    return await fetch("/api/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded",
@@ -21,7 +21,7 @@ export const login = async (username, password) => {
 }
 
 export const register = async (username, password) => {
-    return await fetch("http://localhost:8080/register", {
+    return await fetch("/api/register", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -34,7 +34,7 @@ export const register = async (username, password) => {
 }
 
 export const checkLoginStatus = async() => {
-    return await fetch("http://localhost:8080/me", {
+    return await fetch("/api/me", {
         method:"GET",
         credentials: "include"
     })

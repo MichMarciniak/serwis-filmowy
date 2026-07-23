@@ -90,7 +90,9 @@ function SearchResult() {
     }
 
     const openDetails = (type, id) => {
-        navigate(`/${type}/${id}`);
+        const urlType = type.toLowerCase();
+        if (!urlType) return;
+        navigate(`/${urlType}/${id}`);
     }
 
 
